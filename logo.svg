@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Kordon">
+  <defs>
+    <linearGradient id="k-shield" x1="0.15" y1="0" x2="0.85" y2="1">
+      <stop offset="0" stop-color="#5B9BFF"/>
+      <stop offset="1" stop-color="#1E4FD8"/>
+    </linearGradient>
+    <linearGradient id="k-edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9CC3FF"/>
+      <stop offset="1" stop-color="#3B6CF0"/>
+    </linearGradient>
+  </defs>
+  <!-- щит -->
+  <path d="M256 40 L428 100 V236 C428 344 356 424 256 470 C156 424 84 344 84 236 V100 Z" fill="url(#k-shield)"/>
+  <path d="M256 40 L428 100 V236 C428 344 356 424 256 470 C156 424 84 344 84 236 V100 Z" fill="none" stroke="url(#k-edge)" stroke-width="10" stroke-linejoin="round" opacity=".55"/>
+  <!-- «К» из шлагбаума: столб, поднятая стрела, опора -->
+  <rect x="176" y="150" width="46" height="230" rx="12" fill="#FFFFFF"/>
+  <path d="M222 268 L330 160" stroke="#FFFFFF" stroke-width="44" stroke-linecap="round"/>
+  <path d="M238 252 L334 368" stroke="#FFFFFF" stroke-width="44" stroke-linecap="round"/>
+  <!-- красно-белая отметка на стреле шлагбаума -->
+  <path d="M302 188 L330 160" stroke="#FF5A5F" stroke-width="44" stroke-linecap="round"/>
+</svg>

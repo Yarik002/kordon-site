@@ -12,7 +12,13 @@
 <meta property="og:description" content="AI guard for Telegram groups: a join form, AI that follows your rules, newcomer anti-spam.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yarik002.github.io/kordon-site/en/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 4 7v8c0 7.5 5.1 13.4 12 15 6.9-1.6 12-7.5 12-15V7z' fill='%232f6fed'/%3E%3C/svg%3E">
+<link rel="icon" href="../logo.svg" type="image/svg+xml">
+<meta property="og:image" content="https://yarik002.github.io/kordon-site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kordon — a shield with the letter K: people in, bots out">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0C1D48">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Kordon","applicationCategory":"BusinessApplication","operatingSystem":"Telegram",
@@ -23,7 +29,7 @@
 <body>
 <div class="wrap">
   <header class="top">
-    <a class="logo" href="./"><svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 4 7v8c0 7.5 5.1 13.4 12 15 6.9-1.6 12-7.5 12-15V7z" fill="currentColor" opacity=".9"/><path d="m11 16 3.5 3.5L21.5 12" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Kordon</a>
+    <a class="logo" href="./"><img src="../logo.svg" width="30" height="30" alt="">Kordon</a>
     <a class="lang" href="../" hreflang="ru" lang="ru">Русский</a>
   </header>
 
@@ -77,7 +83,8 @@
       <div class="tile"><div class="ico">🧠</div><h3>AI that follows your rules</h3><p>Describe who belongs in plain words. AI reviews borderline answers and explains every decision.</p></div>
       <div class="tile"><div class="ico">✅</div><h3>Borderline goes to you</h3><p>In careful mode Kordon never declines real people on its own: doubtful requests come to you with ✅/❌.</p></div>
       <div class="tile"><div class="ico">🧹</div><h3>Newcomer anti-spam</h3><p>Newcomers’ first messages and comments under posts: “earn $$$”, “DM me” and spam get deleted, repeat offenders muted.</p></div>
-      <div class="tile"><div class="ico">🔎</div><h3>“Is this a scam?” anywhere</h3><p>Reply to a suspicious message mentioning @KordonAIBot — even in chats where the bot isn’t a member.</p></div>
+      <div class="tile"><div class="ico">🔎</div><h3>“Is this a scam?” anywhere</h3><p>Reply to a suspicious message mentioning @KordonAIBot — even in chats where the bot isn’t a member. In your own chat, use /check.</p></div>
+      <div class="tile"><div class="ico">🗂</div><h3>Decision log</h3><p>Every Kordon decision with its reason, right in the chat settings: who got in, who was declined, what was deleted and why.</p></div>
       <div class="tile"><div class="ico">📊</div><h3>Weekly report</h3><p>How many people were let in, declined, left to you, and how much spam was removed.</p></div>
     </div>
   </div>
@@ -87,7 +94,7 @@
   <div class="wrap">
     <h2>Set up in a minute</h2>
     <ol class="steps">
-      <li><b>Add Kordon to your group</b> as an admin with “Add members” and “Delete messages”.</li>
+      <li><b>Add Kordon to your group</b> as an admin with “Add members”, “Delete messages” and “Ban users”. The button above suggests them for you.</li>
       <li><b>Turn on join requests</b> and pick Kordon as the join request guard. If your app has no such option, the form goes to applicants by DM.</li>
       <li><b>Write your questions and rules</b> in the mini app. Done — Kordon is on duty.</li>
     </ol>
@@ -111,7 +118,7 @@
   <div class="wrap">
     <h2>FAQ</h2>
     <details><summary>What data does the bot see and keep?</summary><p>Only join requests and messages in chats where it is an admin. Form answers are visible to the chat’s admins and are deleted after 30 days. To review borderline cases, the text is sent to an AI provider (Google Gemini or OpenRouter). We don’t sell data or collect conversations in bulk.</p></details>
-    <details><summary>What if the AI is wrong?</summary><p>In careful mode (the default) AI never declines people on its own: you decide borderline requests. Every decision comes with a reason.</p></details>
+    <details><summary>What if the AI is wrong?</summary><p>In careful mode (the default) AI never declines people on its own: you decide borderline requests. Every decision comes with a reason — in the notification and in the decision log in the chat settings.</p></details>
     <details><summary>Do I need Telegram Premium?</summary><p>No — neither you nor your members.</p></details>
     <details><summary>Does it work with channels?</summary><p>Yes. For a private channel with join requests — the join form. For comments — add Kordon as an admin to the channel’s discussion group.</p></details>
   </div>
