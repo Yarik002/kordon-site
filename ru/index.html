@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кордон: антиспам бот для Telegram с анкетой при вступлении</title>
+<meta name="description" content="Антиспам бот для Telegram-групп: анкета при вступлении вместо капчи, AI проверяет ответы по вашим правилам и предупреждает о скаме. Один чат бесплатно.">
+<link rel="canonical" href="https://yarik002.github.io/kordon-site/ru/">
+<link rel="alternate" hreflang="en" href="https://yarik002.github.io/kordon-site/">
+<link rel="alternate" hreflang="ru" href="https://yarik002.github.io/kordon-site/ru/">
+<link rel="alternate" hreflang="x-default" href="https://yarik002.github.io/kordon-site/">
+<link rel="icon" href="../logo.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Кордон">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://yarik002.github.io/kordon-site/ru/">
+<meta property="og:title" content="Кордон: пускает в Telegram-чат людей, а не ботов">
+<meta property="og:description" content="Капча проверяет, умеет ли человек нажать кнопку. Кордон читает его ответы. AI-антиспам и анкета при вступлении для Telegram-групп.">
+<meta property="og:image" content="https://yarik002.github.io/kordon-site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Логотип Кордона, щит с буквой К: пускает в чат людей, а не ботов">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Кордон: пускает в Telegram-чат людей, а не ботов">
+<meta name="twitter:description" content="Капча проверяет, умеет ли человек нажать кнопку. Кордон читает его ответы. Один чат бесплатно.">
+<meta name="twitter:image" content="https://yarik002.github.io/kordon-site/og.png">
+<meta name="theme-color" content="#0C1D48">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yarik002.github.io/kordon-site/#org",
+      "name": "Kordon",
+      "alternateName": "Кордон",
+      "url": "https://yarik002.github.io/kordon-site/",
+      "logo": "https://yarik002.github.io/kordon-site/logo.svg",
+      "sameAs": ["https://t.me/KordonAIBot"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Кордон",
+      "alternateName": ["Kordon", "@KordonAIBot"],
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Telegram",
+      "inLanguage": ["ru", "en"],
+      "url": "https://yarik002.github.io/kordon-site/ru/",
+      "installUrl": "https://t.me/KordonAIBot?start=site_ru",
+      "image": "https://yarik002.github.io/kordon-site/og.png",
+      "description": "Антиспам бот и страж заявок для Telegram-групп и каналов. Новички отвечают на вопросы админа, AI проверяет ответы по правилам админа, а Кордон предупреждает чат о скаме.",
+      "publisher": {"@id": "https://yarik002.github.io/kordon-site/#org"},
+      "offers": [
+        {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "BYN", "description": "1 чат, анкета, база спамеров CAS, эвристики, 100 AI-проверок в месяц, предупреждения о явном скаме."},
+        {"@type": "Offer", "name": "Pro", "description": "500 Telegram Stars в месяц (25 BYN через ЕРИП). 1 чат, 3 000 AI-проверок в месяц, AI-фильтр спама, AI-предупреждения о спорном скаме. Пробный период 7 дней бесплатно, один раз, без автопродления."},
+        {"@type": "Offer", "name": "Сообщество", "description": "1 500 Telegram Stars в месяц (75 BYN через ЕРИП). До 5 чатов, по 3 000 AI-проверок на чат."}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Чем Кордон отличается от капчи, Rose и GroupHelp?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Капча проверяет, умеет ли человек нажать кнопку. Кордон читает его ответы и сверяет с вашими правилами. Rose и GroupHelp хороши в командах, приветствиях и общей модерации. Кордон отвечает за вход: он занимает в Telegram отдельное место стража заявок, поэтому работает рядом с вашим ботом, а не вместо него. Менять бота не нужно."}},
+        {"@type": "Question", "name": "Какие права администратора нужны Кордону?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Три: Добавление участников (чтобы пускать по заявкам), Удаление сообщений (чтобы убирать спам) и Блокировка участников (мут и бан спамеров). Кнопка Добавить в группу сама предложит именно их. Ещё в настройках группы нужно включить заявки на вступление."}},
+        {"@type": "Question", "name": "Что видит вступающий?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Когда человек подаёт заявку, прямо в её окне открывается короткая анкета с пометкой Защищено Кордоном. Он отвечает на ваши вопросы (от 1 до 5) и удерживает кнопку, чтобы отправить. Если его приложение Telegram пока не показывает анкету в окне заявки, Кордон пришлёт ту же анкету в личку. Ответы видят только админы чата. Telegram Premium не нужен никому."}},
+        {"@type": "Question", "name": "Какие данные хранит Кордон и чего никогда не просит?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Кордон видит только заявки и сообщения в чатах, где он администратор. Ответы анкет видят админы чата, через 30 дней они удаляются. Для проверки спорных случаев текст отправляется AI-провайдеру (Google Gemini или OpenRouter). Мы не продаём данные. Кордон никогда не просит криптокошелёк, номер телефона или коды входа. Это делают поддельные боты-верификаторы вроде Safeguard, чтобы украсть аккаунт, поэтому если проверка просит такое, это скам."}},
+        {"@type": "Question", "name": "Что будет, если AI ошибётся?",
+         "acceptedAnswer": {"@type": "Answer", "text": "В осторожном режиме (он по умолчанию) AI сам людям не отказывает. Автоматически Кордон отклоняет только аккаунты из базы спамеров CAS, а спорные заявки приходят вам с кнопками пустить и отклонить. У каждого решения есть причина: она видна в уведомлении и в журнале решений в настройках чата. У предупреждений о скаме есть кнопки Удалить и Не спам для админов, а Не спам выключает предупреждения об этом человеке на неделю."}},
+        {"@type": "Question", "name": "Как оплатить?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Звёздами Telegram прямо в боте: Pro 500 звёзд, Сообщество 1 500 звёзд за 30 дней, отмена в любой момент. Из Беларуси можно оплатить через ЕРИП: 25 BYN или 75 BYN в месяц, напишите в боте /support с названием тарифа. Pro можно сначала попробовать 7 дней бесплатно: один раз, без оплаты и автопродления."}},
+        {"@type": "Question", "name": "Работает с каналами?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Да. В закрытом канале с заявками работает та же анкета при вступлении. Чтобы защитить комментарии, добавьте Кордон администратором в группу обсуждений канала."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="./"><img src="../logo.svg" width="30" height="30" alt="Логотип Кордона">Кордон</a>
+    <nav class="langs" aria-label="Язык">
+      <a href="../" lang="en" hreflang="en">EN</a>
+      <a href="./" lang="ru" aria-current="page">RU</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <span class="eyebrow">Антиспам бот для Telegram-групп</span>
+        <h1>Пускает в ваш Telegram-чат людей, а&nbsp;не&nbsp;ботов</h1>
+        <p class="lead"><b>Капча проверяет, умеет ли человек нажать кнопку. Кордон читает его ответы.</b> Новичок до вступления отвечает на ваши вопросы, AI проверяет ответы по вашим правилам, а спорные заявки приходят вам на ✅/❌. Спам новичков Кордон удаляет сам и предупреждает чат о скаме.</p>
+        <div class="cta">
+          <a class="btn" href="https://t.me/KordonAIBot?startgroup=setup&amp;admin=invite_users+delete_messages+restrict_members">➕ Добавить в группу</a>
+          <a class="btn ghost" href="https://t.me/KordonAIBot?start=site_ru">Открыть бота</a>
+        </div>
+        <p class="note">Один чат бесплатно. Pro можно попробовать 7 дней бесплатно. Без регистрации и Premium: всё внутри Telegram.</p>
+      </div>
+      <div class="phone" role="img" aria-label="Пример: анкета вступающего и решения Кордона">
+        <div class="card"><b>Заявка в «Минск IT»</b><br><span class="muted">Ответьте коротко, так админы отличают людей от ботов.</span><div class="shield">🛡 Защищено Кордоном</div></div>
+        <div class="card">
+          <p class="q">Как вы узнали об этом чате?</p><div class="a">Из канала про вакансии</div>
+          <p class="q">Чем вам интересен чат?</p><div class="a">Junior Python, ищу работу и коллег</div>
+          <div class="hold">Удерживайте, чтобы отправить</div>
+        </div>
+        <div class="card">
+          <div class="verdict"><span class="dot ok"></span><span><b>Анна</b>: пущена, отвечает по теме чата</span></div>
+          <div class="verdict"><span class="dot warn"></span><span><b>Max</b>: вам на решение, зовёт в личку</span></div>
+          <div class="verdict"><span class="dot bad"></span><span><b>crypto_bonus</b>: отклонён, в базе спамеров CAS</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<section class="alt" id="why">
+  <div class="wrap">
+    <h2>Капча больше не спасает от спам-ботов</h2>
+    <p class="sub">Спам в Telegram стал «нейросетевым»: боты проходят простые проверки, пишут осмысленные комментарии и зовут в личку. А строгие капчи отсекают живых людей.</p>
+    <div class="grid">
+      <div class="tile"><div class="ico">🤖</div><h3>Нейрокомментинг</h3><p>По оценке экспертов (vc.ru, 2025), около 12% комментариев в крупных русскоязычных каналах пишут нейросети, а в крипто- и инвест-каналах до 25%.</p></div>
+      <div class="tile"><div class="ico">⏳</div><h3>Ручная проверка заявок</h3><p>Админ тратит время на каждого вступающего или пускает всех подряд, а потом чистит чат.</p></div>
+      <div class="tile"><div class="ico">🚪</div><h3>Капчи злят людей</h3><p>Жёсткие проверки отпугивают нормальных участников, а боты всё равно учатся их проходить.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <h2>Что умеет Кордон</h2>
+    <p class="sub">Использует новые возможности Telegram 2026 года: бот-страж заявок с мини-приложением, гостевой режим и подписки Stars. Ставится рядом с ботом, который у вас уже есть.</p>
+    <div class="grid">
+      <div class="tile"><div class="ico">📝</div><h3>Анкета при вступлении</h3><p>От 1 до 5 ваших вопросов прямо в окне заявки. Удержание кнопки подтверждает, что отвечает человек.</p></div>
+      <div class="tile"><div class="ico">🧠</div><h3>AI по вашим правилам</h3><p>Опишите своими словами, кого пускать. AI читает спорные ответы и объясняет каждое решение.</p></div>
+      <div class="tile"><div class="ico">✅</div><h3>Спорное решаете вы</h3><p>В осторожном режиме Кордон сам не отказывает живым людям: сомнительные заявки приходят вам с кнопками ✅/❌.</p></div>
+      <div class="tile"><div class="ico">🧹</div><h3>Антиспам новичков</h3><p>Первые сообщения новичков и комментарии под постами: ссылки на «заработок», «пишите в лс» и спам удаляются, нарушитель получает мут.</p></div>
+      <div class="tile"><div class="ico">⚠️</div><h3>Предупреждения о скаме</h3><p>На явный скам Кордон сам отвечает предупреждением, упоминать его не нужно. У админов есть кнопки «Удалить» и «Не спам».</p></div>
+      <div class="tile"><div class="ico">🔎</div><h3>«Это скам?» в любом чате</h3><p>Ответьте на подозрительное сообщение упоминанием @KordonAIBot, даже там, где бота нет. В своём чате то же делает /check.</p></div>
+      <div class="tile"><div class="ico">🗂</div><h3>Журнал решений</h3><p>Каждое решение с причиной в настройках чата: кого пустил, кого отклонил, что удалил и почему.</p></div>
+      <div class="tile"><div class="ico">📊</div><h3>Отчёт раз в неделю</h3><p>Сколько пущено, отклонено, отдано вам на решение и сколько спама удалено.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="how">
+  <div class="wrap">
+    <h2>Подключение за минуту</h2>
+    <ol class="steps">
+      <li><b>Добавьте Кордон в группу</b> администратором с правами «Добавление участников», «Удаление сообщений» и «Блокировка участников». Кнопка выше предложит их сама.</li>
+      <li><b>Включите заявки на вступление</b> и выберите Кордон стражем заявок. Если такого пункта нет, анкета будет приходить вступающим в личку.</li>
+      <li><b>Задайте вопросы и правила</b> в мини-приложении. Готово, Кордон работает.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="trial">
+  <div class="wrap">
+    <div class="trial">
+      <div>
+        <h2>Pro бесплатно на 7 дней</h2>
+        <p>Посмотрите, что AI поймает в вашем чате, прежде чем платить. В пробный период входят 300 AI-проверок, AI-фильтр спама и AI-предупреждения о спорном скаме.</p>
+        <ul class="checks">
+          <li>Один раз на аккаунт и на чат</li>
+          <li>Без оплаты и автопродления: через 7 дней чат сам вернётся на Free</li>
+          <li>Включается кнопкой в <code>/plan</code> или в настройках чата</li>
+        </ul>
+      </div>
+      <a class="btn" href="https://t.me/KordonAIBot?start=site_ru">🎁 Включить в боте</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="pricing">
+  <div class="wrap">
+    <h2>Тарифы</h2>
+    <p class="sub">Оплата звёздами Telegram прямо в боте: подписка на 30 дней, отмена в любой момент. Из Беларуси можно оплатить через ЕРИП.</p>
+    <div class="grid">
+      <div class="tile price"><h3>Free</h3><div class="amount">0</div><ul><li>1 чат</li><li>анкета, база CAS, эвристики</li><li>100 AI-проверок в месяц</li><li>антиспам новичков</li><li>предупреждения о явном скаме</li></ul></div>
+      <div class="tile price hot"><span class="tag">7 дней бесплатно</span><h3>Pro</h3><div class="amount">500 ⭐ <small>/ мес · 25 BYN через ЕРИП</small></div><ul><li>1 чат</li><li>3 000 AI-проверок в месяц</li><li>AI-фильтр спама в сообщениях</li><li>AI-предупреждения о спорном скаме</li></ul></div>
+      <div class="tile price"><h3>Сообщество</h3><div class="amount">1 500 ⭐ <small>/ мес · 75 BYN</small></div><ul><li>до 5 чатов</li><li>по 3 000 AI-проверок на чат</li><li>всё из Pro</li></ul></div>
+    </div>
+    <p class="note">Нужна помощь с анкетой и правилами? Напишите в боте <code>/support</code>.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Вопросы</h2>
+    <details><summary>Чем Кордон отличается от капчи, Rose и GroupHelp?</summary><p>Капча проверяет, умеет ли человек нажать кнопку. Кордон читает его ответы и сверяет с вашими правилами. Rose и GroupHelp хороши в командах, приветствиях и общей модерации. Кордон отвечает за вход: он занимает в Telegram отдельное место стража заявок, поэтому работает рядом с вашим ботом, а не вместо него. Менять бота не нужно.</p></details>
+    <details><summary>Какие права администратора нужны Кордону?</summary><p>Три: «Добавление участников» (чтобы пускать по заявкам), «Удаление сообщений» (чтобы убирать спам) и «Блокировка участников» (мут и бан спамеров). Кнопка «Добавить в группу» сама предложит именно их. Ещё в настройках группы нужно включить заявки на вступление.</p></details>
+    <details><summary>Что видит вступающий?</summary><p>Когда человек подаёт заявку, прямо в её окне открывается короткая анкета с пометкой «Защищено Кордоном». Он отвечает на ваши вопросы (от 1 до 5) и удерживает кнопку, чтобы отправить. Если его приложение Telegram пока не показывает анкету в окне заявки, Кордон пришлёт ту же анкету в личку. Ответы видят только админы чата. Telegram Premium не нужен никому.</p></details>
+    <details><summary>Какие данные хранит Кордон и чего никогда не просит?</summary><p>Кордон видит только заявки и сообщения в чатах, где он администратор. Ответы анкет видят админы чата, через 30 дней они удаляются. Для проверки спорных случаев текст отправляется AI-провайдеру (Google Gemini или OpenRouter). Мы не продаём данные.</p><p><b>Кордон никогда не просит криптокошелёк, номер телефона или коды входа.</b> Это делают поддельные боты-верификаторы вроде «Safeguard», чтобы украсть аккаунт, поэтому если проверка просит такое, это скам.</p></details>
+    <details><summary>Что будет, если AI ошибётся?</summary><p>В осторожном режиме (он по умолчанию) AI сам людям не отказывает. Автоматически Кордон отклоняет только аккаунты из базы спамеров CAS, а спорные заявки приходят вам на ✅/❌. У каждого решения есть причина: она видна в уведомлении и в журнале решений в настройках чата. У предупреждений о скаме есть кнопки «Удалить» и «Не спам» для админов, а «Не спам» выключает предупреждения об этом человеке на неделю.</p></details>
+    <details><summary>Как оплатить?</summary><p>Звёздами Telegram прямо в боте: Pro 500 ⭐, Сообщество 1 500 ⭐ за 30 дней, отмена в любой момент. Из Беларуси можно оплатить через ЕРИП: 25 BYN или 75 BYN в месяц, напишите в боте <code>/support</code> с названием тарифа. Pro можно сначала попробовать 7 дней бесплатно: один раз, без оплаты и автопродления.</p></details>
+    <details><summary>Работает с каналами?</summary><p>Да. В закрытом канале с заявками работает та же анкета при вступлении. Чтобы защитить комментарии, добавьте Кордон администратором в группу обсуждений канала.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Кордон: новый проект из Минска. Бот: <a href="https://t.me/KordonAIBot?start=site_ru">@KordonAIBot</a> · Поддержка: <code>/support</code> в боте · <a href="../" hreflang="en" lang="en">English version</a></p>
+    <p>© 2026 Кордон</p>
+  </div>
+</footer>
+</body>
+</html>

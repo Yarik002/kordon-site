@@ -1,61 +1,118 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Кордон — AI-страж Telegram-групп: пускает людей, а не ботов</title>
-<meta name="description" content="Кордон проверяет заявки на вступление в Telegram-группы и каналы: анкета, база спамеров CAS и AI по вашим правилам. Удаляет спам и нейрокомменты новичков. Бесплатно для одного чата.">
+<title>Kordon: Telegram Anti-Spam Bot &amp; Captcha Alternative</title>
+<meta name="description" content="AI join request bot for Telegram groups. New members answer your questions, AI checks them against your rules and flags scams. Free for 1 chat.">
 <link rel="canonical" href="https://yarik002.github.io/kordon-site/">
-<link rel="alternate" hreflang="ru" href="https://yarik002.github.io/kordon-site/">
-<link rel="alternate" hreflang="en" href="https://yarik002.github.io/kordon-site/en/">
-<meta property="og:title" content="Кордон — пускает в чат людей, а не ботов">
-<meta property="og:description" content="AI-страж для Telegram-групп: анкета при вступлении, AI по вашим правилам, антиспам новичков.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://yarik002.github.io/kordon-site/">
+<link rel="alternate" hreflang="en" href="https://yarik002.github.io/kordon-site/">
+<link rel="alternate" hreflang="ru" href="https://yarik002.github.io/kordon-site/ru/">
+<link rel="alternate" hreflang="x-default" href="https://yarik002.github.io/kordon-site/">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kordon">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:url" content="https://yarik002.github.io/kordon-site/">
+<meta property="og:title" content="Kordon: lets people into your Telegram group, keeps bots out">
+<meta property="og:description" content="A captcha checks if someone can press a button. Kordon reads their answers. AI anti-spam and join request guard for Telegram groups.">
 <meta property="og:image" content="https://yarik002.github.io/kordon-site/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Кордон — щит с буквой К: пускает в чат людей, а не ботов">
+<meta property="og:image:alt" content="Kordon logo, a shield with the letter K: people in, bots out">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kordon: lets people into your Telegram group, keeps bots out">
+<meta name="twitter:description" content="A captcha checks if someone can press a button. Kordon reads their answers. Free for 1 chat.">
+<meta name="twitter:image" content="https://yarik002.github.io/kordon-site/og.png">
 <meta name="theme-color" content="#0C1D48">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Кордон","applicationCategory":"BusinessApplication","operatingSystem":"Telegram",
- "description":"AI-страж для Telegram-групп и каналов: проверка заявок на вступление и антиспам.","url":"https://t.me/KordonAIBot",
- "offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"BYN"},{"@type":"Offer","name":"Pro","price":"25","priceCurrency":"BYN"},{"@type":"Offer","name":"Сообщество","price":"75","priceCurrency":"BYN"}]}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yarik002.github.io/kordon-site/#org",
+      "name": "Kordon",
+      "url": "https://yarik002.github.io/kordon-site/",
+      "logo": "https://yarik002.github.io/kordon-site/logo.svg",
+      "sameAs": ["https://t.me/KordonAIBot"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Kordon",
+      "alternateName": "@KordonAIBot",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Telegram",
+      "inLanguage": ["en", "ru"],
+      "url": "https://yarik002.github.io/kordon-site/",
+      "installUrl": "https://t.me/KordonAIBot?start=site",
+      "image": "https://yarik002.github.io/kordon-site/og.png",
+      "description": "AI anti-spam bot and join request guard for Telegram groups and channels. New members answer the admin's questions, AI checks the answers against the admin's rules, and Kordon warns the chat about scams.",
+      "publisher": {"@id": "https://yarik002.github.io/kordon-site/#org"},
+      "offers": [
+        {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "1 chat, join form, CAS spammer list, heuristics, 100 AI checks a month, warnings about obvious scams."},
+        {"@type": "Offer", "name": "Pro", "description": "500 Telegram Stars a month. 1 chat, 3,000 AI checks a month, AI spam filter, AI warnings about borderline scams. 7-day free trial once, no auto-renewal."},
+        {"@type": "Offer", "name": "Community", "description": "1,500 Telegram Stars a month. Up to 5 chats, 3,000 AI checks per chat."}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How is Kordon different from a captcha or from Rose and GroupHelp?",
+         "acceptedAnswer": {"@type": "Answer", "text": "A captcha checks if someone can press a button. Kordon reads their answers and checks them against your rules. Rose and GroupHelp are good at commands, welcome messages and general moderation. Kordon handles the door: it uses Telegram's join request guard slot, so it works next to your current bot, not instead of it. You don't have to switch."}},
+        {"@type": "Question", "name": "What admin rights does Kordon need?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Three: Add members (to approve join requests), Delete messages (to remove spam) and Ban users (to mute and ban spammers). The Add to group button asks for exactly these. Join requests also need to be turned on in the group settings."}},
+        {"@type": "Question", "name": "What does a new member see?",
+         "acceptedAnswer": {"@type": "Answer", "text": "When they ask to join, a short form opens right in the join request window, marked Protected by Kordon. They answer your 1 to 5 questions and press and hold to send. If their Telegram app doesn't show the form there yet, Kordon sends the same form by DM. Only the chat's admins see the answers. Nobody needs Telegram Premium."}},
+        {"@type": "Question", "name": "What data does Kordon keep, and what does it never ask for?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Kordon only sees join requests and messages in chats where it is an admin. Form answers are visible to the chat's admins and are deleted after 30 days. To review borderline cases, the text is sent to an AI provider (Google Gemini or OpenRouter). We don't sell data. Kordon never asks for a crypto wallet, a phone number or login codes. Fake Safeguard-style verification bots ask for these to steal accounts, so if a verification asks for them, it's a scam."}},
+        {"@type": "Question", "name": "What if the AI gets it wrong?",
+         "acceptedAnswer": {"@type": "Answer", "text": "In careful mode, the default, AI never declines people on its own. Kordon only declines accounts listed in the CAS spammer database automatically. Borderline requests come to you with approve and decline buttons. Every decision has a reason, shown in the notification and in the decision log in the chat settings. Scam warnings come with Delete and Not spam buttons for admins, and Not spam keeps Kordon quiet about that person for a week."}},
+        {"@type": "Question", "name": "How do I pay?",
+         "acceptedAnswer": {"@type": "Answer", "text": "With Telegram Stars, right in the bot. Pro is 500 Stars and Community is 1,500 Stars for 30 days, and you can cancel any time. You can try Pro for 7 days for free first: once, with no payment and no auto-renewal."}},
+        {"@type": "Question", "name": "Does it work with channels?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Yes. A private channel with join requests gets the same join form. To protect comments, add Kordon as an admin to the channel's discussion group."}}
+      ]
+    }
+  ]
+}
 </script>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <a class="logo" href="./"><img src="logo.svg" width="30" height="30" alt="">Кордон</a>
-    <a class="lang" href="en/" hreflang="en" lang="en">English</a>
+    <a class="logo" href="./"><img src="logo.svg" width="30" height="30" alt="Kordon logo">Kordon</a>
+    <nav class="langs" aria-label="Language">
+      <a href="./" lang="en" aria-current="page">EN</a>
+      <a href="ru/" lang="ru" hreflang="ru">RU</a>
+    </nav>
   </header>
 
   <main>
     <div class="hero">
       <div>
-        <span class="eyebrow">Новое в Telegram — бот-страж заявок</span>
-        <h1>Пускает в ваш чат людей, а&nbsp;не&nbsp;ботов</h1>
-        <p class="lead">Кордон проверяет каждого, кто подаёт заявку: короткая анкета, база спамеров CAS и AI, который читает ответы по вашим правилам. Спорных — вам на ✅/❌. А спам и нейрокомменты новичков удаляет сам.</p>
+        <span class="eyebrow">AI anti-spam bot for Telegram groups</span>
+        <h1>Lets people into your Telegram group, keeps bots&nbsp;out</h1>
+        <p class="lead"><b>A captcha checks if someone can press a button. Kordon reads their answers.</b> New members answer your questions before they join, AI checks the answers against your rules, and borderline requests come to you with ✅/❌. Newcomer spam gets deleted, and scams get a warning.</p>
         <div class="cta">
-          <a class="btn" href="https://t.me/KordonAIBot?startgroup=setup&amp;admin=invite_users+delete_messages+restrict_members">➕ Добавить в группу</a>
-          <a class="btn ghost" href="https://t.me/KordonAIBot">Открыть бота</a>
+          <a class="btn" href="https://t.me/KordonAIBot?startgroup=setup&amp;admin=invite_users+delete_messages+restrict_members">➕ Add to a group</a>
+          <a class="btn ghost" href="https://t.me/KordonAIBot?start=site">Open the bot</a>
         </div>
-        <p class="note">Бесплатно для одного чата. Без регистрации — всё внутри Telegram, Premium не нужен.</p>
+        <p class="note">Free for one chat. Pro is free for 7 days. No sign-up and no Premium: it all happens inside Telegram.</p>
       </div>
-      <div class="phone" role="img" aria-label="Пример: анкета вступающего и решения Кордона">
-        <div class="card"><b>Заявка в «Минск IT»</b><br><span style="color:var(--muted)">Ответьте коротко — так админы отличают людей от ботов.</span></div>
+      <div class="phone" role="img" aria-label="Example: a join request form and Kordon's decisions">
+        <div class="card"><b>Request to join “Dev Hub”</b><br><span class="muted">Answer briefly, this is how the admins tell people from bots.</span><div class="shield">🛡 Protected by Kordon</div></div>
         <div class="card">
-          <p class="q">Как вы узнали об этом чате?</p><div class="a">Из канала про вакансии</div>
-          <p class="q">Чем вам интересен чат?</p><div class="a">Junior Python, ищу работу и коллег</div>
-          <div class="hold">Удерживайте, чтобы отправить</div>
+          <p class="q">How did you find this chat?</p><div class="a">A friend shared the link</div>
+          <p class="q">Why do you want to join?</p><div class="a">Backend dev, looking for code reviews</div>
+          <div class="hold">Press and hold to send</div>
         </div>
         <div class="card">
-          <div class="verdict"><span class="dot" style="background:var(--ok)"></span><span><b>Анна</b> — пущена: отвечает по теме чата</span></div>
-          <div class="verdict" style="margin-top:6px"><span class="dot" style="background:var(--warn)"></span><span><b>Max</b> — вам на решение: зовёт в личку</span></div>
-          <div class="verdict" style="margin-top:6px"><span class="dot" style="background:var(--bad)"></span><span><b>crypto_bonus</b> — отклонён: в базе спамеров CAS</span></div>
+          <div class="verdict"><span class="dot ok"></span><span><b>Anna</b>: let in, on-topic answers</span></div>
+          <div class="verdict"><span class="dot warn"></span><span><b>Max</b>: up to you, asks people to DM</span></div>
+          <div class="verdict"><span class="dot bad"></span><span><b>crypto_bonus</b>: declined, listed in CAS</span></div>
         </div>
       </div>
     </div>
@@ -64,71 +121,91 @@
 
 <section class="alt" id="why">
   <div class="wrap">
-    <h2>Капча больше не спасает</h2>
-    <p class="sub">Спам в Telegram стал «нейросетевым»: боты проходят простые проверки, пишут осмысленные комментарии и зовут в личку. А строгие капчи отсекают живых людей.</p>
+    <h2>Captchas don’t stop spam bots anymore</h2>
+    <p class="sub">Telegram spam got smarter. Bots pass simple checks, write comments that sound human and lure people into DMs. Strict captchas, meanwhile, scare off real people.</p>
     <div class="grid">
-      <div class="tile"><div class="ico">🤖</div><h3>Нейрокомментинг</h3><p>По оценке экспертов (vc.ru, 2025), около 12% комментариев в крупных русскоязычных каналах пишут нейросети, в крипто- и инвест-каналах — до 25%.</p></div>
-      <div class="tile"><div class="ico">⏳</div><h3>Ручная проверка заявок</h3><p>Админ тратит время на каждого вступающего или пускает всех подряд — и потом чистит чат.</p></div>
-      <div class="tile"><div class="ico">🚪</div><h3>Капчи злят людей</h3><p>Жёсткие проверки отпугивают нормальных участников, а боты всё равно учатся их проходить.</p></div>
+      <div class="tile"><div class="ico">🤖</div><h3>AI-written comments</h3><p>Promo bots post plausible comments under channel posts and in groups. Keyword filters miss them.</p></div>
+      <div class="tile"><div class="ico">⏳</div><h3>Screening by hand</h3><p>Admins either read every join request themselves or let everyone in and clean up later.</p></div>
+      <div class="tile"><div class="ico">🚪</div><h3>Captchas annoy people</h3><p>Hard puzzles push away real members, and bots keep learning to solve them.</p></div>
     </div>
   </div>
 </section>
 
 <section id="features">
   <div class="wrap">
-    <h2>Что умеет Кордон</h2>
-    <p class="sub">Использует новые возможности Telegram 2026 года: бот-страж заявок с мини-приложением, гостевой режим и подписки Stars.</p>
+    <h2>What Kordon does</h2>
+    <p class="sub">Built on Telegram’s 2026 features: join request guard bots with mini apps, guest mode and Stars subscriptions. It works next to the bot you already use.</p>
     <div class="grid">
-      <div class="tile"><div class="ico">📝</div><h3>Анкета при вступлении</h3><p>1–5 ваших вопросов прямо в окне заявки. Удержание кнопки подтверждает, что отвечает человек.</p></div>
-      <div class="tile"><div class="ico">🧠</div><h3>AI по вашим правилам</h3><p>Опишите своими словами, кого пускать. AI читает спорные ответы и объясняет каждое решение.</p></div>
-      <div class="tile"><div class="ico">✅</div><h3>Спорное — вам</h3><p>В осторожном режиме Кордон сам не отказывает живым людям: сомнительные заявки приходят вам с кнопками ✅/❌.</p></div>
-      <div class="tile"><div class="ico">🧹</div><h3>Антиспам новичков</h3><p>Первые сообщения новичков и комментарии под постами: ссылки на «заработок», «пишите в лс» и спам удаляются, нарушитель получает мут.</p></div>
-      <div class="tile"><div class="ico">🔎</div><h3>«Это скам?» в любом чате</h3><p>Ответьте на подозрительное сообщение упоминанием @KordonAIBot — даже там, где бота нет. В своём чате Кордон предупреждает о явном скаме сам, без упоминания, а /check проверит любое сообщение.</p></div>
-      <div class="tile"><div class="ico">🗂</div><h3>Журнал решений</h3><p>Каждое решение Кордона с причиной — в настройках чата: кого пустил, кого отклонил, что удалил и почему.</p></div>
-      <div class="tile"><div class="ico">📊</div><h3>Отчёт раз в неделю</h3><p>Сколько пущено, отклонено, отдано вам на решение и сколько спама удалено.</p></div>
+      <div class="tile"><div class="ico">📝</div><h3>A form on join</h3><p>Ask 1 to 5 questions of your own right in the join request window. Pressing and holding the send button shows a person is answering.</p></div>
+      <div class="tile"><div class="ico">🧠</div><h3>AI that follows your rules</h3><p>Describe who belongs in plain words. AI reviews borderline answers and explains every decision.</p></div>
+      <div class="tile"><div class="ico">✅</div><h3>Borderline goes to you</h3><p>In careful mode Kordon never declines real people on its own. Doubtful requests come to you with ✅/❌.</p></div>
+      <div class="tile"><div class="ico">🧹</div><h3>Newcomer anti-spam</h3><p>Newcomers’ first messages and comments under posts are checked. “Earn $$$”, “DM me” and other spam gets deleted, repeat offenders get muted.</p></div>
+      <div class="tile"><div class="ico">⚠️</div><h3>Scam warnings</h3><p>When someone posts an obvious scam, Kordon replies with a warning by itself, no mention needed. Admins get Delete and Not spam buttons.</p></div>
+      <div class="tile"><div class="ico">🔎</div><h3>“Is this a scam?” anywhere</h3><p>Reply to a suspicious message and mention @KordonAIBot, even in chats where the bot isn’t a member. In your own chat, /check does the same.</p></div>
+      <div class="tile"><div class="ico">🗂</div><h3>Decision log</h3><p>Every decision with its reason, right in the chat settings: who got in, who was declined, what was deleted and why.</p></div>
+      <div class="tile"><div class="ico">📊</div><h3>Weekly report</h3><p>How many people were let in, declined or left to you, and how much spam was removed.</p></div>
     </div>
   </div>
 </section>
 
 <section class="alt" id="how">
   <div class="wrap">
-    <h2>Подключение за минуту</h2>
+    <h2>Set up in a minute</h2>
     <ol class="steps">
-      <li><b>Добавьте Кордон в группу</b> администратором — с правами «Добавление участников», «Удаление сообщений» и «Блокировка участников». Кнопка выше предложит их сама.</li>
-      <li><b>Включите заявки на вступление</b> и выберите Кордон стражем заявок. Если такого пункта нет — анкета будет приходить вступающим в личку.</li>
-      <li><b>Задайте вопросы и правила</b> в мини-приложении. Готово — Кордон работает.</li>
+      <li><b>Add Kordon to your group</b> as an admin with “Add members”, “Delete messages” and “Ban users”. The button above asks for them for you.</li>
+      <li><b>Turn on join requests</b> and pick Kordon as the join request guard. If your Telegram app has no such option, the form goes to applicants by DM.</li>
+      <li><b>Write your questions and rules</b> in the mini app. That’s it, Kordon is on duty.</li>
     </ol>
   </div>
 </section>
 
-<section id="pricing">
+<section id="trial">
   <div class="wrap">
-    <h2>Тарифы</h2>
-    <p class="sub">Оплата Telegram Stars прямо в боте — подписка на 30 дней, отмена в любой момент. Из Беларуси можно оплатить через ЕРИП.</p>
-    <div class="grid">
-      <div class="tile price"><h3>Free</h3><div class="amount">0</div><ul><li>1 чат</li><li>анкета, база CAS, эвристики</li><li>100 AI-проверок в месяц</li><li>антиспам новичков</li></ul></div>
-      <div class="tile price hot"><span class="tag">Для активного чата</span><h3>Pro</h3><div class="amount">500 ⭐ <small>/ мес · 25 BYN через ЕРИП</small></div><ul><li>1 чат</li><li>3 000 AI-проверок в месяц</li><li>AI-фильтр спама в сообщениях</li></ul></div>
-      <div class="tile price"><h3>Сообщество</h3><div class="amount">1 500 ⭐ <small>/ мес · 75 BYN</small></div><ul><li>до 5 чатов</li><li>по 3 000 AI-проверок на чат</li><li>AI-фильтр спама в сообщениях</li></ul></div>
+    <div class="trial">
+      <div>
+        <h2>Try Pro free for 7 days</h2>
+        <p>See what AI catches in your own chat before you pay anything. The trial includes 300 AI checks, the AI spam filter and AI warnings about borderline scams.</p>
+        <ul class="checks">
+          <li>Once per account and per chat</li>
+          <li>No payment and no auto-renewal: after 7 days the chat goes back to Free by itself</li>
+          <li>Start it with the button in <code>/plan</code> or in the chat settings</li>
+        </ul>
+      </div>
+      <a class="btn" href="https://t.me/KordonAIBot?start=site">🎁 Start in the bot</a>
     </div>
-    <p class="note">Нужна помощь с настройкой анкеты и правил? Напишите в боте <code>/support</code>.</p>
   </div>
 </section>
 
-<section class="alt" id="faq">
+<section class="alt" id="pricing">
   <div class="wrap">
-    <h2>Вопросы</h2>
-    <details><summary>Какие данные видит и хранит бот?</summary><p>Только заявки и сообщения в чатах, где он администратор. Ответы анкет видят админы чата, через 30 дней они удаляются. Для проверки спорных случаев текст отправляется AI-провайдеру (Google Gemini или OpenRouter). Мы не продаём данные и не собираем переписку массово.</p></details>
-    <details><summary>Что будет, если AI ошибётся?</summary><p>В осторожном режиме (по умолчанию) AI не отклоняет людей сам: спорные заявки решаете вы. У каждого решения есть причина — её видно в уведомлении и в журнале решений в настройках чата.</p></details>
-    <details><summary>Нужен ли Telegram Premium?</summary><p>Нет. Ни вам, ни участникам.</p></details>
-    <details><summary>Работает с каналами?</summary><p>Да. Для закрытого канала с заявками — анкета при вступлении. Для комментариев — добавьте Кордон администратором в группу обсуждений канала.</p></details>
-    <details><summary>Как оплатить из Беларуси?</summary><p>Telegram Stars прямо в боте или ЕРИП: напишите в боте <code>/support</code> с названием тарифа — пришлём реквизиты.</p></details>
+    <h2>Pricing</h2>
+    <p class="sub">Pay with Telegram Stars right in the bot. A subscription lasts 30 days and you can cancel any time.</p>
+    <div class="grid">
+      <div class="tile price"><h3>Free</h3><div class="amount">0</div><ul><li>1 chat</li><li>join form, CAS spammer list, heuristics</li><li>100 AI checks a month</li><li>newcomer anti-spam</li><li>warnings about obvious scams</li></ul></div>
+      <div class="tile price hot"><span class="tag">7 days free</span><h3>Pro</h3><div class="amount">500 ⭐ <small>/ month</small></div><ul><li>1 chat</li><li>3,000 AI checks a month</li><li>AI spam filter for messages</li><li>AI warnings about borderline scams</li></ul></div>
+      <div class="tile price"><h3>Community</h3><div class="amount">1,500 ⭐ <small>/ month</small></div><ul><li>up to 5 chats</li><li>3,000 AI checks per chat</li><li>everything in Pro</li></ul></div>
+    </div>
+    <p class="note">Need help writing the form and rules? Send <code>/support</code> in the bot.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>FAQ</h2>
+    <details><summary>How is Kordon different from a captcha or from Rose and GroupHelp?</summary><p>A captcha checks if someone can press a button. Kordon reads their answers and checks them against your rules. Rose and GroupHelp are good at commands, welcome messages and general moderation. Kordon handles the door: it uses Telegram’s join request guard slot, so it works next to your current bot, not instead of it. You don’t have to switch.</p></details>
+    <details><summary>What admin rights does Kordon need?</summary><p>Three: “Add members” (to approve join requests), “Delete messages” (to remove spam) and “Ban users” (to mute and ban spammers). The Add to group button asks for exactly these. Join requests also need to be turned on in the group settings.</p></details>
+    <details><summary>What does a new member see?</summary><p>When they ask to join, a short form opens right in the join request window, marked “Protected by Kordon”. They answer your 1 to 5 questions and press and hold to send. If their Telegram app doesn’t show the form there yet, Kordon sends the same form by DM. Only the chat’s admins see the answers. Nobody needs Telegram Premium.</p></details>
+    <details><summary>What data does Kordon keep, and what does it never ask for?</summary><p>Kordon only sees join requests and messages in chats where it is an admin. Form answers are visible to the chat’s admins and are deleted after 30 days. To review borderline cases, the text is sent to an AI provider (Google Gemini or OpenRouter). We don’t sell data.</p><p><b>Kordon never asks for a crypto wallet, a phone number or login codes.</b> Fake “Safeguard”-style verification bots ask for these to steal accounts, so if a verification asks for them, it’s a scam.</p></details>
+    <details><summary>What if the AI gets it wrong?</summary><p>In careful mode, the default, AI never declines people on its own. Kordon only declines accounts listed in the CAS spammer database automatically. Borderline requests come to you with ✅/❌. Every decision has a reason, shown in the notification and in the decision log in the chat settings. Scam warnings come with “Delete” and “Not spam” buttons for admins, and “Not spam” keeps Kordon quiet about that person for a week.</p></details>
+    <details><summary>How do I pay?</summary><p>With Telegram Stars, right in the bot. Pro is 500 ⭐ and Community is 1,500 ⭐ for 30 days, and you can cancel any time. You can try Pro for 7 days for free first: once, with no payment and no auto-renewal.</p></details>
+    <details><summary>Does it work with channels?</summary><p>Yes. A private channel with join requests gets the same join form. To protect comments, add Kordon as an admin to the channel’s discussion group.</p></details>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>Кордон — новый проект из Минска. Бот: <a href="https://t.me/KordonAIBot">@KordonAIBot</a> · Поддержка: <code>/support</code> в боте · <a href="en/" hreflang="en">English</a></p>
-    <p>© 2026 Кордон</p>
+    <p>Kordon is a new project from Minsk. Bot: <a href="https://t.me/KordonAIBot?start=site">@KordonAIBot</a> · Support: <code>/support</code> in the bot · <a href="ru/" hreflang="ru" lang="ru">Русская версия</a></p>
+    <p>© 2026 Kordon</p>
   </div>
 </footer>
 </body>
